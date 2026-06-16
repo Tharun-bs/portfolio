@@ -1,0 +1,3041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================
+       META & SEO
+       ============================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tharun B S, AI/ML & Robotics Engineer. Portfolio showcasing AI, computer vision, robotics, CAD automation, and full-stack projects." />
+  <meta name="author" content="Tharun B S" />
+  <meta name="keywords" content="AI, ML, Robotics, Computer Vision, Portfolio, Engineer, Tharun B S" />
+  <title>Tharun B S </title>
+
+  <!-- ============================================
+       EXTERNAL DEPENDENCIES (FontAwesome only)
+       ============================================ -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- ============================================
+       CSS ALL STYLES EMBEDDED
+       ============================================ -->
+  <style>
+    /* ==============================================
+       1. CSS VARIABLES & DESIGN TOKENS
+       ==============================================
+       Edit these to change the entire theme.
+    */
+    :root {
+      /* --- Gold Palette --- */
+      --primary-gold: #d4af37;
+      --bright-gold: #ffd700;
+      --dark-gold: #b8860b;
+      --gold-glow: rgba(212, 175, 55, 0.25);
+      --gold-glow-strong: rgba(212, 175, 55, 0.45);
+
+      /* --- Background Palette --- */
+      --black-bg: #0a0a0a;
+      --pure-black: #000000;
+      --charcoal: #1a1a1a;
+      --charcoal-light: #2a2a2a;
+
+      /* --- Text Palette --- */
+      --white-text: #f0f0f0;
+      --bright-white: #ffffff;
+      --silver: #d0d0d0;
+      --silver-dim: #a0a0a0;
+
+      /* --- Optional Accents --- */
+      --cream: #fffdd0;
+      --burgundy: #800020;
+
+      /* --- Typography --- */
+      --font-primary: 'Times New Roman', Georgia, 'Palatino Linotype', serif;
+
+      /* --- Spacing Scale (multiples of 8) --- */
+      --space-xs: 8px;
+      --space-sm: 16px;
+      --space-md: 24px;
+      --space-lg: 32px;
+      --space-xl: 48px;
+      --space-2xl: 64px;
+      --space-3xl: 80px;
+
+      /* --- Layout --- */
+      --max-width: 1200px;
+      --border-radius: 8px;
+      --border-radius-circle: 50%;
+
+      /* --- Transitions --- */
+      --transition-fast: 300ms ease-in-out;
+      --transition-medium: 500ms ease-in-out;
+      --transition-cubic: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ==============================================
+       2. GLOBAL RESET & BASE STYLES
+       ============================================== */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      background-color: var(--black-bg);
+      color: var(--white-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--primary-gold);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    a:hover {
+      color: var(--bright-gold);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    /* ==============================================
+       3. TYPOGRAPHY
+       ============================================== */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: 0.5px;
+      color: var(--bright-white);
+    }
+
+    h1 { font-size: 60px; }
+    h2 { font-size: 42px; color: var(--primary-gold); }
+    h3 { font-size: 28px; }
+    h4 { font-size: 22px; }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--white-text);
+    }
+
+    .section-subtitle {
+      font-size: 20px;
+      font-style: italic;
+      color: var(--silver);
+      margin-bottom: var(--space-xl);
+      max-width: 700px;
+    }
+
+    .gold-text { color: var(--primary-gold); }
+    .bright-gold-text { color: var(--bright-gold); }
+
+    /* ==============================================
+       4. UTILITY CLASSES
+       ============================================== */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    .section {
+      padding: var(--space-3xl) 0;
+      position: relative;
+    }
+
+    .section-alt {
+      background-color: var(--pure-black);
+    }
+
+    .section-divider {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary-gold), var(--bright-gold));
+      margin: var(--space-sm) auto var(--space-lg);
+      border-radius: 2px;
+    }
+
+    .text-center { text-align: center; }
+
+    /* ==============================================
+       5. BUTTONS
+       ============================================== */
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--primary-gold);
+      color: var(--pure-black);
+      font-family: var(--font-primary);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 14px 36px;
+      border: 2px solid var(--primary-gold);
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--bright-gold);
+      border-color: var(--bright-gold);
+      color: var(--pure-black);
+      box-shadow: 0 8px 25px var(--gold-glow-strong);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      background-color: transparent;
+      color: var(--primary-gold);
+      font-family: var(--font-primary);
+      font-size: 16px;
+      font-weight: 400;
+      padding: 12px 32px;
+      border: 2px solid var(--primary-gold);
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      letter-spacing: 0.5px;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--primary-gold);
+      color: var(--pure-black);
+      box-shadow: 0 8px 25px var(--gold-glow);
+      transform: translateY(-2px);
+    }
+
+    .btn-small {
+      padding: 8px 20px;
+      font-size: 14px;
+    }
+
+    /* ==============================================
+       6. CARDS (Reusable)
+       ============================================== */
+    .card {
+      background-color: var(--charcoal);
+      border: 2px solid var(--primary-gold);
+      border-radius: var(--border-radius);
+      padding: var(--space-lg);
+      transition: all var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(212,175,55,0.03) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px var(--gold-glow);
+      border-color: var(--bright-gold);
+    }
+
+    /* ==============================================
+       7. PHOTO PLACEHOLDERS (Reusable)
+       ============================================== */
+    .photo-placeholder {
+      background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-light) 100%);
+      border: 3px solid var(--primary-gold);
+      border-radius: var(--border-radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--silver-dim);
+      font-size: 14px;
+      font-style: italic;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .photo-placeholder i {
+      font-size: 48px;
+      color: var(--dark-gold);
+      opacity: 0.5;
+    }
+
+    /* ==============================================
+       8. SCROLL ANIMATIONS (fade-in-up)
+       ============================================== */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 600ms ease-out, transform 600ms ease-out;
+    }
+
+    .animate-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered children */
+    .stagger-children .animate-on-scroll:nth-child(1) { transition-delay: 0ms; }
+    .stagger-children .animate-on-scroll:nth-child(2) { transition-delay: 150ms; }
+    .stagger-children .animate-on-scroll:nth-child(3) { transition-delay: 300ms; }
+    .stagger-children .animate-on-scroll:nth-child(4) { transition-delay: 450ms; }
+    .stagger-children .animate-on-scroll:nth-child(5) { transition-delay: 600ms; }
+    .stagger-children .animate-on-scroll:nth-child(6) { transition-delay: 750ms; }
+
+    /* ==============================================
+       NAVIGATION / HEADER
+       ============================================== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+      transition: all var(--transition-fast);
+    }
+
+    .site-header.scrolled {
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      border-bottom-color: rgba(212, 175, 55, 0.3);
+    }
+
+    .nav-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-primary);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--primary-gold);
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    .nav-logo:hover {
+      color: var(--bright-gold);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+    }
+
+    .nav-link {
+      font-family: var(--font-primary);
+      font-size: 15px;
+      color: var(--white-text);
+      text-decoration: none;
+      position: relative;
+      padding: 4px 0;
+      transition: color var(--transition-fast);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-gold);
+      transition: width var(--transition-fast);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary-gold);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      background: none;
+      border: none;
+      z-index: 1100;
+    }
+
+    .hamburger span {
+      width: 28px;
+      height: 2px;
+      background-color: var(--primary-gold);
+      transition: all var(--transition-fast);
+      display: block;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Mobile Sidebar */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 280px;
+      height: 100vh;
+      background-color: var(--pure-black);
+      border-left: 2px solid var(--primary-gold);
+      z-index: 1050;
+      transition: right var(--transition-fast);
+      padding: var(--space-3xl) var(--space-lg);
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .mobile-nav.open {
+      right: 0;
+    }
+
+    .mobile-nav .nav-link {
+      font-size: 20px;
+      display: block;
+      padding: var(--space-sm) 0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .nav-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1040;
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+    }
+
+    .nav-overlay.active {
+      opacity: 1;
+    }
+
+
+    /* ==============================================================
+       SECTION 1: HERO
+       ==============================================================
+       Full viewport height, animated gradient, CTA buttons, hero image.
+    */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 72px; /* account for fixed header */
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        135deg,
+        var(--pure-black) 0%,
+        #0d0b00 30%,
+        #1a1400 60%,
+        rgba(212, 175, 55, 0.08) 100%
+      );
+      z-index: 0;
+    }
+
+    /* Animated gold orb accents */
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: 15%;
+      right: 10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      bottom: 10%;
+      left: 5%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255,215,0,0.04) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 10s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -20px) scale(1.05); }
+      66% { transform: translate(-20px, 15px) scale(0.95); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2xl);
+      align-items: center;
+    }
+
+    .hero-text {
+      animation: fadeInUp 800ms ease-out forwards;
+    }
+
+    .hero-greeting {
+      font-size: 18px;
+      color: var(--primary-gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: var(--space-sm);
+      font-weight: 400;
+    }
+
+    .hero-title {
+      font-size: 58px;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: var(--space-md);
+      background: linear-gradient(135deg, var(--bright-white) 0%, var(--primary-gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+      font-style: italic;
+      color: var(--silver);
+      margin-bottom: var(--space-xs);
+      line-height: 1.5;
+    }
+
+    .hero-tagline {
+      font-size: 17px;
+      color: var(--silver-dim);
+      margin-bottom: var(--space-xl);
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+    }
+
+    .hero-image-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeInUp 800ms ease-out 200ms both;
+    }
+
+    /* PHOTO_PLACEHOLDER_HERO_500x500 */
+    .hero-photo {
+      width: 420px;
+      height: 420px;
+      border-radius: var(--border-radius);
+      border: 3px solid var(--primary-gold);
+      box-shadow: 0 0 60px var(--gold-glow), 0 0 120px rgba(212,175,55,0.08);
+      position: relative;
+    }
+
+    .hero-photo::after {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      width: 100%;
+      height: 100%;
+      border: 2px solid rgba(212,175,55,0.2);
+      border-radius: var(--border-radius);
+      z-index: -1;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      animation: bounce 2s ease-in-out infinite;
+      color: var(--primary-gold);
+      font-size: 24px;
+      opacity: 0.6;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(12px); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+
+    /* ==============================================================
+       SECTION 2: WHAT I DO
+       ==============================================================
+       3 service cards in a responsive grid.
+    */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
+    }
+
+    .service-card {
+      text-align: center;
+      padding: var(--space-xl) var(--space-lg);
+    }
+
+    /* PHOTO_PLACEHOLDER_SERVICE_[1-3]_200x200 */
+    .service-icon-wrap {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto var(--space-md);
+      border-radius: var(--border-radius-circle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--charcoal-light), var(--charcoal));
+      border: 2px solid var(--primary-gold);
+      transition: all var(--transition-fast);
+    }
+
+    .service-card:hover .service-icon-wrap {
+      box-shadow: 0 0 30px var(--gold-glow);
+      border-color: var(--bright-gold);
+    }
+
+    .service-icon-wrap i {
+      font-size: 40px;
+      color: var(--primary-gold);
+    }
+
+    .service-card h3 {
+      margin-bottom: var(--space-sm);
+      color: var(--primary-gold);
+      font-size: 22px;
+    }
+
+    .service-card p {
+      font-size: 16px;
+      color: var(--silver);
+      margin-bottom: var(--space-md);
+    }
+
+    .skill-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .skill-highlight-tag {
+      font-size: 12px;
+      padding: 4px 12px;
+      background-color: rgba(212,175,55,0.1);
+      border: 1px solid rgba(212,175,55,0.3);
+      border-radius: 20px;
+      color: var(--primary-gold);
+      font-family: var(--font-primary);
+    }
+
+
+    /* ==============================================================
+       SECTION 3: AREAS OF EXPERTISE & SKILLS
+       ==============================================================
+       Left: 6 expandable domain categories.
+       Right: Skill grid with proficiency-coded tags.
+    */
+    .expertise-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      margin-top: var(--space-xl);
+    }
+
+    /* --- Left: Domain Categories --- */
+    .domain-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .domain-item {
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      transition: border-color var(--transition-fast);
+    }
+
+    .domain-item:hover {
+      border-color: var(--primary-gold);
+    }
+
+    .domain-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-sm) var(--space-md);
+      cursor: pointer;
+      background-color: var(--charcoal);
+      transition: background-color var(--transition-fast);
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-family: var(--font-primary);
+      color: var(--white-text);
+    }
+
+    .domain-header:hover {
+      background-color: var(--charcoal-light);
+    }
+
+    .domain-header h4 {
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .domain-header h4 i {
+      color: var(--primary-gold);
+      width: 24px;
+      text-align: center;
+    }
+
+    .domain-chevron {
+      color: var(--primary-gold);
+      transition: transform var(--transition-fast);
+      font-size: 14px;
+    }
+
+    .domain-item.open .domain-chevron {
+      transform: rotate(180deg);
+    }
+
+    .domain-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 400ms ease-in-out, padding 400ms ease-in-out;
+      background-color: rgba(26, 26, 26, 0.5);
+      padding: 0 var(--space-md);
+    }
+
+    .domain-item.open .domain-body {
+      max-height: 300px;
+      padding: var(--space-sm) var(--space-md) var(--space-md);
+    }
+
+    .domain-body ul {
+      list-style: none;
+    }
+
+    .domain-body ul li {
+      font-size: 15px;
+      color: var(--silver);
+      padding: 4px 0;
+      padding-left: var(--space-sm);
+      position: relative;
+    }
+
+    .domain-body ul li::before {
+      content: '\25B9';
+      position: absolute;
+      left: 0;
+      color: var(--primary-gold);
+    }
+
+    /* --- Right: Skill Grid --- */
+    .skills-panel h3 {
+      font-size: 24px;
+      color: var(--primary-gold);
+      margin-bottom: var(--space-md);
+    }
+
+    .skill-category {
+      margin-bottom: var(--space-md);
+    }
+
+    .skill-category-label {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--silver-dim);
+      margin-bottom: var(--space-xs);
+      font-weight: 700;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      font-family: var(--font-primary);
+      font-size: 14px;
+      padding: 6px 16px;
+      border-radius: 20px;
+      transition: all var(--transition-fast);
+      cursor: default;
+    }
+
+    /* Proficiency levels */
+    .skill-tag.expert {
+      background-color: rgba(255, 215, 0, 0.15);
+      border: 1px solid var(--bright-gold);
+      color: var(--bright-gold);
+    }
+
+    .skill-tag.advanced {
+      background-color: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--primary-gold);
+      color: var(--primary-gold);
+    }
+
+    .skill-tag.intermediate {
+      background-color: rgba(184, 134, 11, 0.08);
+      border: 1px solid var(--dark-gold);
+      color: var(--dark-gold);
+    }
+
+    .skill-tag:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--gold-glow);
+    }
+
+    .skill-legend {
+      display: flex;
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
+      font-size: 13px;
+    }
+
+    .skill-legend span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .legend-dot.expert { background-color: var(--bright-gold); }
+    .legend-dot.advanced { background-color: var(--primary-gold); }
+    .legend-dot.intermediate { background-color: var(--dark-gold); }
+
+
+    /* ==============================================================
+       SECTION 4: EXPERIENCE
+       ==============================================================
+       Timeline-style experience entries.
+    */
+    .experience-timeline {
+      position: relative;
+      margin-top: var(--space-xl);
+      padding-left: 40px;
+    }
+
+    .experience-timeline::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--primary-gold), rgba(212,175,55,0.2));
+    }
+
+    .experience-entry {
+      position: relative;
+      margin-bottom: var(--space-xl);
+      padding: var(--space-lg);
+      background-color: var(--charcoal);
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: var(--border-radius);
+      transition: all var(--transition-fast);
+    }
+
+    .experience-entry:hover {
+      border-color: var(--primary-gold);
+      box-shadow: 0 10px 40px var(--gold-glow);
+    }
+
+    .experience-entry::before {
+      content: '';
+      position: absolute;
+      left: -33px;
+      top: 36px;
+      width: 14px;
+      height: 14px;
+      background-color: var(--primary-gold);
+      border-radius: 50%;
+      border: 3px solid var(--black-bg);
+      z-index: 1;
+    }
+
+    .experience-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      margin-bottom: var(--space-sm);
+    }
+
+    .experience-role {
+      font-size: 24px;
+      color: var(--bright-white);
+    }
+
+    .experience-date {
+      font-size: 14px;
+      color: var(--primary-gold);
+      padding: 4px 14px;
+      border: 1px solid rgba(212,175,55,0.3);
+      border-radius: 20px;
+    }
+
+    .experience-company {
+      font-size: 18px;
+      color: var(--primary-gold);
+      margin-bottom: var(--space-sm);
+    }
+
+    .experience-description {
+      font-size: 16px;
+      color: var(--silver);
+      margin-bottom: var(--space-sm);
+    }
+
+    .experience-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: var(--space-sm);
+    }
+
+
+    /* ==============================================================
+       SECTION 5: ACHIEVEMENTS & AWARDS
+       ==============================================================
+       Cards for achievements. Currently: L&T PIVOT only.
+    */
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
+    }
+
+    .achievement-card {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: var(--space-md);
+      align-items: center;
+    }
+
+    /* Achievement image */
+    .achievement-image {
+      width: 180px;
+      height: 180px;
+      border-radius: var(--border-radius);
+      object-fit: cover;
+      border: 2px solid rgba(212,175,55,0.3);
+      transition: all var(--transition-fast);
+    }
+
+    .achievement-card:hover .achievement-image {
+      border-color: var(--primary-gold);
+      box-shadow: 0 8px 25px var(--gold-glow);
+    }
+
+    .achievement-content h3 {
+      font-size: 22px;
+      color: var(--primary-gold);
+      margin-bottom: var(--space-xs);
+    }
+
+    .achievement-event {
+      font-size: 14px;
+      color: var(--bright-gold);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: var(--space-xs);
+    }
+
+    .achievement-content p {
+      font-size: 16px;
+      color: var(--silver);
+      margin-bottom: var(--space-sm);
+    }
+
+    .achievement-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      background-color: rgba(212,175,55,0.12);
+      border: 1px solid var(--primary-gold);
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--primary-gold);
+    }
+
+    .achievement-badge i {
+      color: var(--bright-gold);
+    }
+
+
+    /* ==============================================================
+       SECTION 6: CAPSTONE PROJECTS
+       ==============================================================
+       Serious, impactful projects in a grid.
+    */
+    .projects-section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--primary-gold);
+      padding: 6px 18px;
+      border: 1px solid rgba(212,175,55,0.3);
+      border-radius: 20px;
+      margin-bottom: var(--space-sm);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
+
+    /* Project thumbnail — flush with card edges */
+    .project-thumbnail {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      margin: 0;
+      border-radius: 6px 6px 0 0;
+      border-bottom: 2px solid rgba(212,175,55,0.2);
+      transition: filter var(--transition-fast);
+    }
+
+    .project-card:hover .project-thumbnail {
+      filter: brightness(1.1);
+      border-bottom-color: var(--primary-gold);
+    }
+
+    .project-category {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: var(--space-sm);
+      padding: var(--space-md) var(--space-lg) 0;
+    }
+
+    .category-badge {
+      font-size: 11px;
+      padding: 3px 10px;
+      background-color: rgba(212,175,55,0.1);
+      color: var(--primary-gold);
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: var(--font-primary);
+    }
+
+    .project-card h3 {
+      font-size: 20px;
+      margin-bottom: var(--space-xs);
+      padding: 0 var(--space-lg);
+    }
+
+    .project-card .project-desc {
+      font-size: 15px;
+      color: var(--silver);
+      margin-bottom: var(--space-sm);
+      padding: 0 var(--space-lg);
+      flex-grow: 1;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: var(--space-sm);
+    }
+
+    .tech-tag {
+      font-size: 12px;
+      padding: 3px 10px;
+      background-color: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--silver);
+      border-radius: 4px;
+      font-family: var(--font-primary);
+    }
+
+    .project-status {
+      font-size: 13px;
+      margin-bottom: var(--space-sm);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .status-dot.completed { background-color: #4caf50; }
+    .status-dot.in-dev { background-color: var(--bright-gold); }
+
+    .project-links {
+      display: flex;
+      gap: var(--space-xs);
+      margin-top: auto;
+      padding: 0 var(--space-lg) var(--space-lg);
+    }
+
+
+    /* ==============================================================
+       SECTION 7: FUN SIDE QUESTS
+       ==============================================================
+       Lighter, experimental projects. Same card style, different header.
+    */
+    /* Re-uses .projects-grid and .project-card styles from above */
+
+
+    /* ==============================================================
+       SECTION 8: PATENTS & PUBLICATIONS
+       ==============================================================
+       List of patents, papers, and publications.
+    */
+    .publications-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
+    }
+
+    .publication-entry {
+      padding: var(--space-lg);
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: var(--space-md);
+      align-items: start;
+    }
+
+    .publication-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--border-radius);
+      background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.05));
+      border: 1px solid rgba(212,175,55,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-gold);
+      font-size: 22px;
+    }
+
+    .publication-content h3 {
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .publication-meta {
+      font-size: 14px;
+      color: var(--primary-gold);
+      margin-bottom: var(--space-xs);
+    }
+
+    .publication-content p {
+      font-size: 15px;
+      color: var(--silver);
+      margin-bottom: var(--space-sm);
+    }
+
+    .publication-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pub-type-badge {
+      font-size: 11px;
+      padding: 3px 12px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: var(--font-primary);
+    }
+
+    .pub-type-badge.patent {
+      background-color: rgba(255, 215, 0, 0.12);
+      border: 1px solid var(--bright-gold);
+      color: var(--bright-gold);
+    }
+
+    .pub-type-badge.paper {
+      background-color: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--primary-gold);
+      color: var(--primary-gold);
+    }
+
+    .pub-type-badge.publication {
+      background-color: rgba(184, 134, 11, 0.1);
+      border: 1px solid var(--dark-gold);
+      color: var(--dark-gold);
+    }
+
+
+    /* ==============================================================
+       SECTION 9: CONTACT
+       ==============================================================
+       Form on left, info on right. No Opus Agent.
+    */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: var(--space-xl);
+      margin-top: var(--space-xl);
+    }
+
+    .contact-form h3 {
+      font-size: 28px;
+      color: var(--primary-gold);
+      margin-bottom: var(--space-md);
+    }
+
+    .form-group {
+      margin-bottom: var(--space-md);
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      color: var(--primary-gold);
+      margin-bottom: 6px;
+      font-family: var(--font-primary);
+      font-weight: 700;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      font-family: var(--font-primary);
+      font-size: 16px;
+      color: var(--white-text);
+      background-color: rgba(26, 26, 26, 0.8);
+      border: 2px solid rgba(212,175,55,0.2);
+      border-radius: var(--border-radius);
+      transition: all var(--transition-fast);
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary-gold);
+      box-shadow: 0 0 15px rgba(212,175,55,0.15);
+      background-color: rgba(212,175,55,0.03);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--silver-dim);
+    }
+
+    .form-error {
+      font-size: 13px;
+      color: var(--bright-gold);
+      margin-top: 4px;
+      display: none;
+    }
+
+    .form-group.error input,
+    .form-group.error textarea {
+      border-color: #e74c3c;
+    }
+
+    .form-group.error .form-error {
+      display: block;
+      color: #e74c3c;
+    }
+
+    #form-success {
+      display: none;
+      padding: var(--space-md);
+      background-color: rgba(212,175,55,0.08);
+      border: 1px solid var(--primary-gold);
+      border-radius: var(--border-radius);
+      color: var(--primary-gold);
+      text-align: center;
+      font-size: 16px;
+      margin-top: var(--space-sm);
+    }
+
+    /* --- Contact Info Panel --- */
+    .contact-info h3 {
+      font-size: 28px;
+      color: var(--primary-gold);
+      margin-bottom: var(--space-md);
+    }
+
+    .contact-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+    }
+
+    .contact-info-item .icon-circle {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: var(--border-radius-circle);
+      background-color: rgba(212,175,55,0.1);
+      border: 1px solid rgba(212,175,55,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-gold);
+      font-size: 18px;
+    }
+
+    .contact-info-item .info-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-info-item .info-label {
+      font-size: 13px;
+      color: var(--silver-dim);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .contact-info-item .info-value {
+      font-size: 16px;
+      color: var(--white-text);
+    }
+
+    .contact-info-item .info-value a {
+      color: var(--white-text);
+      transition: color var(--transition-fast);
+    }
+
+    .contact-info-item .info-value a:hover {
+      color: var(--primary-gold);
+    }
+
+    /* Social row */
+    .contact-socials {
+      display: flex;
+      gap: var(--space-sm);
+      margin-top: var(--space-lg);
+    }
+
+    .social-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--border-radius-circle);
+      border: 2px solid rgba(212,175,55,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-gold);
+      font-size: 20px;
+      transition: all var(--transition-fast);
+    }
+
+    .social-icon:hover {
+      background-color: var(--primary-gold);
+      color: var(--pure-black);
+      border-color: var(--primary-gold);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px var(--gold-glow);
+    }
+
+
+    /* ==============================================================
+       FOOTER
+       ==============================================================
+    */
+    .site-footer {
+      background-color: var(--pure-black);
+      border-top: 1px solid rgba(212,175,55,0.2);
+      padding: var(--space-xl) 0 var(--space-lg);
+      text-align: center;
+    }
+
+    .footer-tagline {
+      font-size: 18px;
+      font-style: italic;
+      color: var(--silver);
+      margin-bottom: var(--space-md);
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+
+    .footer-copyright {
+      font-size: 14px;
+      color: var(--silver-dim);
+    }
+
+    .footer-credit {
+      font-size: 13px;
+      color: var(--silver-dim);
+      margin-top: var(--space-xs);
+    }
+
+    /* Scroll to top */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 48px;
+      height: 48px;
+      border-radius: var(--border-radius-circle);
+      background-color: var(--primary-gold);
+      color: var(--pure-black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-fast);
+      z-index: 900;
+      border: none;
+      box-shadow: 0 4px 20px var(--gold-glow);
+    }
+
+    .scroll-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-to-top:hover {
+      background-color: var(--bright-gold);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px var(--gold-glow-strong);
+    }
+
+
+    /* ==============================================================
+       RESPONSIVE: TABLET (768px Ã¢â‚¬â€œ 1199px)
+       ============================================== */
+    @media (max-width: 1199px) {
+      h1, .hero-title { font-size: 46px; }
+      h2 { font-size: 34px; }
+      h3 { font-size: 24px; }
+
+      .section { padding: 60px 0; }
+
+      .hero-content {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-lg);
+      }
+
+      .hero-photo {
+        width: 340px;
+        height: 340px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-sm);
+      }
+
+      .expertise-layout {
+        gap: var(--space-lg);
+      }
+
+      .contact-layout {
+        gap: var(--space-lg);
+      }
+    }
+
+
+    /* ==============================================================
+       RESPONSIVE: MOBILE (up to 767px)
+       ============================================== */
+    @media (max-width: 767px) {
+      h1, .hero-title { font-size: 36px; }
+      h2 { font-size: 28px; }
+      h3 { font-size: 20px; }
+      p { font-size: 16px; }
+
+      .section { padding: 40px 0; }
+
+      .section-subtitle { font-size: 16px; }
+
+      /* Nav */
+      .nav-menu { display: none; }
+      .hamburger { display: flex; }
+      .mobile-nav { display: flex; }
+
+      /* Hero */
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: var(--space-xl);
+      }
+
+      .hero-text { order: 2; }
+      .hero-image-wrapper { order: 1; }
+
+      .hero-photo {
+        width: 250px;
+        height: 250px;
+      }
+
+      .hero-cta {
+        justify-content: center;
+      }
+
+      .hero-greeting {
+        font-size: 14px;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+      }
+
+      .hero-tagline {
+        font-size: 15px;
+      }
+
+      /* Services */
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Expertise */
+      .expertise-layout {
+        grid-template-columns: 1fr;
+      }
+
+      /* Achievements */
+      .achievements-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .achievement-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .achievement-image {
+        margin: 0 auto;
+        width: 140px;
+        height: 140px;
+      }
+
+      /* Projects */
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Experience */
+      .experience-timeline {
+        padding-left: 30px;
+      }
+
+      .experience-timeline::before {
+        left: 10px;
+      }
+
+      .experience-entry::before {
+        left: -27px;
+        width: 12px;
+        height: 12px;
+      }
+
+      .experience-role { font-size: 20px; }
+
+      /* Contact */
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      /* Buttons full width */
+      .btn-primary, .btn-secondary {
+        display: block;
+        text-align: center;
+      }
+
+      .hero-cta .btn-primary,
+      .hero-cta .btn-secondary {
+        display: inline-block;
+      }
+
+      /* Scroll to top */
+      .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+      }
+    }
+
+
+    /* ==============================================================
+       CERTIFICATIONS Ã¢â‚¬â€ Infinite Horizontal Marquee
+       ==============================================================
+       Two rows of certification badges scrolling in opposite directions.
+       Uses pure CSS @keyframes Ã¢â‚¬â€ no JS needed.
+       To add/remove certs: edit the .cert-item spans in the HTML.
+    */
+    .certifications-marquee {
+      overflow: hidden;
+      padding: var(--space-lg) 0;
+      position: relative;
+    }
+
+    /* Fade edges */
+    .certifications-marquee::before,
+    .certifications-marquee::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 120px;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .certifications-marquee::before {
+      left: 0;
+      background: linear-gradient(to right, var(--black-bg), transparent);
+    }
+
+    .section-alt .certifications-marquee::before {
+      background: linear-gradient(to right, var(--pure-black), transparent);
+    }
+
+    .certifications-marquee::after {
+      right: 0;
+      background: linear-gradient(to left, var(--black-bg), transparent);
+    }
+
+    .section-alt .certifications-marquee::after {
+      background: linear-gradient(to left, var(--pure-black), transparent);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      gap: var(--space-sm);
+      padding: var(--space-xs) 0;
+    }
+
+    .marquee-track.scroll-left {
+      animation: marqueeLeft 80s linear infinite;
+    }
+
+    .marquee-track.scroll-right {
+      animation: marqueeRight 90s linear infinite;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes marqueeLeft {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes marqueeRight {
+      0%   { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+
+    .cert-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      background-color: var(--charcoal);
+      border: 1px solid rgba(212,175,55,0.25);
+      border-radius: 28px;
+      color: var(--white-text);
+      font-family: var(--font-primary);
+      font-size: 14px;
+      white-space: nowrap;
+      transition: all var(--transition-fast);
+      flex-shrink: 0;
+    }
+
+    .cert-item:hover {
+      border-color: var(--primary-gold);
+      background-color: rgba(212,175,55,0.08);
+      box-shadow: 0 4px 20px var(--gold-glow);
+      transform: translateY(-2px);
+    }
+
+    .cert-item i {
+      color: var(--primary-gold);
+      font-size: 16px;
+    }
+
+    .cert-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: var(--space-sm);
+      font-size: 15px;
+      color: var(--silver-dim);
+    }
+
+    .cert-count strong {
+      color: var(--primary-gold);
+      font-size: 20px;
+    }
+
+
+    /* ==============================================================
+       BEYOND THE CODE Ã¢â‚¬â€ Podcasts & Blogs
+       ==============================================================
+       Small, compact section with icon cards.
+    */
+    .beyond-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .beyond-card {
+      text-align: center;
+      padding: 0;
+      border: 1px solid rgba(212,175,55,0.2);
+      overflow: hidden;
+    }
+
+    .beyond-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--primary-gold);
+    }
+
+    .beyond-card-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 2px solid rgba(212,175,55,0.2);
+      transition: all var(--transition-fast);
+    }
+
+    .beyond-card:hover .beyond-card-image {
+      filter: brightness(1.1);
+      border-bottom-color: var(--primary-gold);
+    }
+
+    .beyond-card-body {
+      padding: var(--space-md) var(--space-lg) var(--space-lg);
+    }
+
+    .beyond-card h3 {
+      font-size: 20px;
+      color: var(--primary-gold);
+      margin-bottom: var(--space-xs);
+    }
+
+    .beyond-card p {
+      font-size: 15px;
+      color: var(--silver);
+      margin-bottom: var(--space-sm);
+    }
+
+
+    /* ==============================================================
+       RESUME BUTTON (in Contact section)
+       ============================================== */
+    .resume-cta {
+      text-align: center;
+      margin-top: var(--space-xl);
+      padding-top: var(--space-lg);
+      border-top: 1px solid rgba(212,175,55,0.15);
+    }
+
+    .resume-cta p {
+      font-size: 16px;
+      color: var(--silver);
+      margin-bottom: var(--space-sm);
+    }
+
+    .btn-resume {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+      color: var(--pure-black);
+      font-family: var(--font-primary);
+      font-size: 18px;
+      font-weight: 700;
+      padding: 16px 48px;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+    }
+
+    .btn-resume:hover {
+      background: linear-gradient(135deg, var(--bright-gold), var(--primary-gold));
+      color: var(--pure-black);
+      box-shadow: 0 10px 35px var(--gold-glow-strong);
+      transform: translateY(-3px);
+    }
+
+    .btn-resume i {
+      font-size: 20px;
+    }
+
+
+    /* --- Responsive additions for new sections --- */
+    @media (max-width: 767px) {
+      .beyond-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cert-item {
+        padding: 8px 18px;
+        font-size: 13px;
+      }
+
+      .btn-resume {
+        padding: 14px 36px;
+        font-size: 16px;
+      }
+    }
+
+
+    /* ==============================================================
+       ACCESSIBILITY
+       ============================================== */
+    /* Focus outlines */
+    :focus-visible {
+      outline: 2px solid var(--primary-gold);
+      outline-offset: 3px;
+    }
+
+    /* Skip to main content */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: var(--space-sm);
+      background-color: var(--primary-gold);
+      color: var(--pure-black);
+      padding: 12px 24px;
+      border-radius: var(--border-radius);
+      z-index: 2000;
+      font-weight: 700;
+      font-family: var(--font-primary);
+      transition: top var(--transition-fast);
+    }
+
+    .skip-link:focus {
+      top: var(--space-sm);
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .animate-on-scroll {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- NAVIGATION -->
+  <header class="site-header" id="site-header" role="banner">
+    <nav class="nav-container" role="navigation" aria-label="Main navigation">
+      <a href="#hero" class="nav-logo" aria-label="Tharun B S - Home">Tharun B S</a>
+
+      <!-- Desktop Nav -->
+      <div class="nav-menu" id="nav-menu">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#services" class="nav-link">What I Do</a>
+        <a href="#expertise" class="nav-link">Expertise</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#capstone-projects" class="nav-link">Projects</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#patents" class="nav-link">Patents</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <!-- Hamburger (mobile) -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Nav Sidebar -->
+  <div class="nav-overlay" id="nav-overlay"></div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="#hero" class="nav-link">Home</a>
+    <a href="#services" class="nav-link">What I Do</a>
+    <a href="#expertise" class="nav-link">Expertise</a>
+    <a href="#experience" class="nav-link">Experience</a>
+    <a href="#achievements" class="nav-link">Achievements</a>
+    <a href="#capstone-projects" class="nav-link">Projects</a>
+    <a href="#certifications" class="nav-link">Certifications</a>
+    <a href="#patents" class="nav-link">Patents</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+
+
+  <!-- ==============================================================
+       MAIN CONTENT
+       ============================================================== -->
+  <main id="main-content">
+
+
+    <!-- ==============================================================
+         SECTION 1: HERO
+         ==============================================================
+         Full viewport, animated gradient, headline, CTAs, hero image.
+         To add your photo: replace the .photo-placeholder div below.
+    -->
+    <section id="hero" aria-label="Hero introduction">
+      <div class="hero-bg"></div>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="hero-greeting">Hello, I'm Tharun</p>
+          <h1 class="hero-title">Building AI &amp; Robotics Systems That Matter</h1>
+          <p class="hero-subtitle">Electrical Engineer · AI/ML Specialist · Hardware Hacker</p>
+          <p class="hero-tagline">
+            B.E. EEE student at SRIT, Coimbatore — passionate about bridging the gap between intelligent software and physical hardware. From multi-agent LLM orchestrators to autonomous robotics, I engineer systems that solve real-world problems.
+          </p>
+          <div class="hero-cta">
+            <a href="#capstone-projects" class="btn-primary">View My Work</a>
+            <a href="#contact" class="btn-secondary">Get In Touch</a>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+          <img src="images/tharun.jpg" alt="Tharun B S - AI/ML & Robotics Engineer" class="hero-photo" style="object-fit:cover;" />
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+
+    <!-- ==============================================================
+         SECTION 2: WHAT I DO
+         ==============================================================
+         3 service cards: AI/ML, Robotics, CAD Automation.
+         To add service images: replace each .photo-placeholder inside.
+    -->
+    <section id="services" class="section section-alt" aria-label="What I do">
+      <div class="container text-center">
+        <h2>What I Do</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">
+          Specializing in the intersection of artificial intelligence, robotics, and engineering automation.
+        </p>
+
+        <div class="services-grid stagger-children">
+
+          <!-- Service Card 1: AI & ML -->
+          <div class="card service-card animate-on-scroll">
+            <!-- PHOTO_PLACEHOLDER_SERVICE_1_200x200 -->
+            <!-- Replace with: <img src="images/service-ai.png" alt="AI & ML icon" style="width:120px;height:120px;border-radius:50%;margin:0 auto 24px;" /> -->
+            <div class="service-icon-wrap">
+              <i class="fas fa-brain" aria-hidden="true"></i>
+            </div>
+            <h3>AI &amp; Machine Learning</h3>
+            <p>Computer vision, NLP, LLM-based agent systems (LangGraph, CrewAI, Groq), time-series forecasting, and end-to-end ML pipeline development.</p>
+            <div class="skill-highlights">
+              <span class="skill-highlight-tag">Python</span>
+              <span class="skill-highlight-tag">PyTorch</span>
+              <span class="skill-highlight-tag">TensorFlow</span>
+              <span class="skill-highlight-tag">HuggingFace</span>
+              <span class="skill-highlight-tag">FastAPI</span>
+            </div>
+          </div>
+
+          <!-- Service Card 2: Robotics -->
+          <div class="card service-card animate-on-scroll">
+            <!-- PHOTO_PLACEHOLDER_SERVICE_2_200x200 -->
+            <!-- Replace with: <img src="images/service-robotics.png" alt="Robotics icon" style="width:120px;height:120px;border-radius:50%;margin:0 auto 24px;" /> -->
+            <div class="service-icon-wrap">
+              <i class="fas fa-robot" aria-hidden="true"></i>
+            </div>
+            <h3>Robotics &amp; Embedded Systems</h3>
+            <p>ROS2 middleware, Gazebo simulation, sensor integration, firmware development (ESP32, FreeRTOS), IoT systems, and hardware-software integration for autonomous systems.</p>
+            <div class="skill-highlights">
+              <span class="skill-highlight-tag">C++</span>
+              <span class="skill-highlight-tag">ROS2</span>
+              <span class="skill-highlight-tag">Gazebo</span>
+              <span class="skill-highlight-tag">Arduino</span>
+              <span class="skill-highlight-tag">ESP32</span>
+              <span class="skill-highlight-tag">MQTT</span>
+            </div>
+          </div>
+
+          <!-- Service Card 3: CAD Automation -->
+          <div class="card service-card animate-on-scroll">
+            <!-- PHOTO_PLACEHOLDER_SERVICE_3_200x200 -->
+            <!-- Replace with: <img src="images/service-cad.png" alt="CAD Automation icon" style="width:120px;height:120px;border-radius:50%;margin:0 auto 24px;" /> -->
+            <div class="service-icon-wrap">
+              <i class="fas fa-drafting-compass" aria-hidden="true"></i>
+            </div>
+            <h3>CAD Automation &amp; Digital Engineering</h3>
+            <p>Creo Parametric scripting (J-Link/VB API, Pro/Toolkit C++), DXF processing, and AI-driven CAD workflows.</p>
+            <div class="skill-highlights">
+              <span class="skill-highlight-tag">Creo Parametric</span>
+              <span class="skill-highlight-tag">Pro/Toolkit</span>
+              <span class="skill-highlight-tag">VB.NET</span>
+              <span class="skill-highlight-tag">OpenCV</span>
+              <span class="skill-highlight-tag">ezdxf</span>
+            </div>
+          </div>
+
+        </div><!-- /.services-grid -->
+      </div>
+    </section>
+
+
+    <!-- ==============================================================
+         SECTION 3: AREAS OF EXPERTISE & SKILLS
+         ==============================================================
+         Left column: 6 expandable domain categories.
+         Right column: Skill tags with proficiency levels.
+         To add/remove skills: edit the .skill-tag spans below.
+    -->
+    <section id="expertise" class="section" aria-label="Areas of expertise and skills">
+      <div class="container">
+        <div class="text-center">
+          <h2>Areas of Expertise</h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">
+            Deep technical knowledge across six core engineering domains, backed by hands-on project experience.
+          </p>
+        </div>
+
+        <div class="expertise-layout">
+
+          <!-- LEFT: Domain Categories (Accordion) -->
+          <div class="domain-list animate-on-scroll" role="list">
+
+            <!-- Domain 1: AI & Computer Vision -->
+            <div class="domain-item open" role="listitem">
+              <button class="domain-header" aria-expanded="true" onclick="toggleDomain(this)">
+                <h4><i class="fas fa-eye" aria-hidden="true"></i> AI &amp; Computer Vision</h4>
+                <i class="fas fa-chevron-down domain-chevron" aria-hidden="true"></i>
+              </button>
+              <div class="domain-body">
+                <ul>
+                  <li>Object detection</li>
+                  <li>Vision Language Models (VLMs)</li>
+                  <li>Real-time inference optimization</li>
+                  <li>Model training &amp; Dataset management</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Domain 2: LLM & Agent Systems -->
+            <div class="domain-item" role="listitem">
+              <button class="domain-header" aria-expanded="false" onclick="toggleDomain(this)">
+                <h4><i class="fas fa-comments" aria-hidden="true"></i> LLM &amp; Agent Systems</h4>
+                <i class="fas fa-chevron-down domain-chevron" aria-hidden="true"></i>
+              </button>
+              <div class="domain-body">
+                <ul>
+                  <li>LangGraph, CrewAI, Groq integration</li>
+                  <li>Mistral, Llama, FAISS</li>
+                  <li>Multi-agent orchestration &amp; workflows</li>
+                  <li>RAG (Retrieval-Augmented Generation)</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Domain 3: Robotics & Autonomous Systems -->
+            <div class="domain-item" role="listitem">
+              <button class="domain-header" aria-expanded="false" onclick="toggleDomain(this)">
+                <h4><i class="fas fa-cogs" aria-hidden="true"></i> Robotics &amp; Autonomous Systems</h4>
+                <i class="fas fa-chevron-down domain-chevron" aria-hidden="true"></i>
+              </button>
+              <div class="domain-body">
+                <ul>
+                  <li>ROS2 middleware &amp; ecosystem</li>
+                  <li>Gazebo physics simulation</li>
+                  <li>Sensor fusion &amp; SLAM</li>
+                  <li>Motion planning &amp; control</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Domain 4: CAD Automation & Digital Twin -->
+            <div class="domain-item" role="listitem">
+              <button class="domain-header" aria-expanded="false" onclick="toggleDomain(this)">
+                <h4><i class="fas fa-vector-square" aria-hidden="true"></i> CAD Automation &amp; Digital Twin</h4>
+                <i class="fas fa-chevron-down domain-chevron" aria-hidden="true"></i>
+              </button>
+              <div class="domain-body">
+                <ul>
+                  <li>Creo Parametric scripting (J-Link, Pro/Toolkit)</li>
+                  <li>Workflows Orchestration (N8N)</li>
+                  <li>DXF / geometry processing</li>
+                  <li>AI-enhanced design workflows</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Domain 5: Full-Stack Web & Cloud -->
+            <div class="domain-item" role="listitem">
+              <button class="domain-header" aria-expanded="false" onclick="toggleDomain(this)">
+                <h4><i class="fas fa-cloud" aria-hidden="true"></i> Full-Stack Web &amp; Cloud</h4>
+                <i class="fas fa-chevron-down domain-chevron" aria-hidden="true"></i>
+              </button>
+              <div class="domain-body">
+                <ul>
+                  <li>FastAPI, Flask, Node.js / Express</li>
+                  <li>SQLite, PostgreSQL, MongoDB</li>
+                  <li>Docker &amp; containerization</li>
+                  <li>REST APIs &amp; WebSockets</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Domain 6: Embedded & IoT -->
+            <div class="domain-item" role="listitem">
+              <button class="domain-header" aria-expanded="false" onclick="toggleDomain(this)">
+                <h4><i class="fas fa-microchip" aria-hidden="true"></i> Embedded &amp; IoT</h4>
+                <i class="fas fa-chevron-down domain-chevron" aria-hidden="true"></i>
+              </button>
+              <div class="domain-body">
+                <ul>
+                  <li>ESP32 firmware (Arduino, FreeRTOS)</li>
+                  <li>Sensor Fusion & Integration</li>
+                  <li>MQTT / IoT protocols</li>
+                  <li>Power-efficient design</li>
+                </ul>
+              </div>
+            </div>
+
+          </div><!-- /.domain-list -->
+
+          <!-- RIGHT: Skills Grid -->
+          <div class="skills-panel animate-on-scroll">
+            <h3>Technical Skills</h3>
+
+            <!-- Legend -->
+            <div class="skill-legend">
+              <span><span class="legend-dot expert"></span> Expert</span>
+              <span><span class="legend-dot advanced"></span> Advanced</span>
+              <span><span class="legend-dot intermediate"></span> Intermediate</span>
+            </div>
+
+            <!-- Languages -->
+            <div class="skill-category">
+              <p class="skill-category-label">Languages</p>
+              <div class="skill-tags">
+                <span class="skill-tag expert">Python</span>
+                <span class="skill-tag advanced">C++</span>
+                <span class="skill-tag advanced">JavaScript</span>
+                <span class="skill-tag advanced">SQL</span>
+                <span class="skill-tag intermediate">VB.NET</span>
+                <span class="skill-tag intermediate">Bash</span>
+              </div>
+            </div>
+
+            <!-- ML/AI Frameworks -->
+            <div class="skill-category">
+              <p class="skill-category-label">ML / AI Frameworks</p>
+              <div class="skill-tags">
+                <span class="skill-tag expert">PyTorch</span>
+                <span class="skill-tag expert">OpenCV</span>
+                <span class="skill-tag advanced">TensorFlow</span>
+                <span class="skill-tag advanced">HuggingFace</span>
+                <span class="skill-tag advanced">Scikit-learn</span>
+              </div>
+            </div>
+
+            <!-- Robotics & Systems -->
+            <div class="skill-category">
+              <p class="skill-category-label">Robotics &amp; Systems</p>
+              <div class="skill-tags">
+                <span class="skill-tag advanced">ROS2</span>
+                <span class="skill-tag advanced">Gazebo</span>
+                <span class="skill-tag expert">Arduino</span>
+                <span class="skill-tag intermediate">FreeRTOS</span>
+                <span class="skill-tag advanced">MQTT</span>
+              </div>
+            </div>
+
+            <!-- Web & Backend -->
+            <div class="skill-category">
+              <p class="skill-category-label">Web &amp; Backend</p>
+              <div class="skill-tags">
+                <span class="skill-tag expert">FastAPI</span>
+                <span class="skill-tag advanced">Flask</span>
+                <span class="skill-tag advanced">Express.js</span>
+                <span class="skill-tag advanced">SQLite</span>
+                <span class="skill-tag intermediate">PostgreSQL</span>
+                <span class="skill-tag intermediate">Docker</span>
+              </div>
+            </div>
+
+            <!-- CAD & Design -->
+            <div class="skill-category">
+              <p class="skill-category-label">CAD &amp; Design</p>
+              <div class="skill-tags">
+                <span class="skill-tag advanced">Creo Parametric</span>
+                <span class="skill-tag advanced">Pro/Toolkit</span>
+                <span class="skill-tag advanced">ezdxf</span>
+              </div>
+            </div>
+
+            <!-- Tools & Platforms -->
+            <div class="skill-category">
+              <p class="skill-category-label">Tools &amp; Platforms</p>
+              <div class="skill-tags">
+                <span class="skill-tag expert">Git</span>
+                <span class="skill-tag expert">VS Code</span>
+                <span class="skill-tag advanced">Jupyter</span>
+                <span class="skill-tag advanced">Linux</span>
+                <span class="skill-tag intermediate">GCP</span>
+                <span class="skill-tag advanced">Roboflow</span>
+                <span class="skill-tag advanced">Groq API</span>
+              </div>
+            </div>
+
+          </div><!-- /.skills-panel -->
+
+        </div><!-- /.expertise-layout -->
+      </div>
+    </section>
+
+
+    <!-- ==============================================================
+         SECTION 4: EXPERIENCE
+         ==============================================================
+         Timeline-style entries for professional experience.
+         To add more: duplicate an .experience-entry block.
+    -->
+    <section id="experience" class="section section-alt" aria-label="Professional experience">
+      <div class="container">
+        <div class="text-center">
+          <h2>Work &amp; Leadership Experience</h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">
+            Hands-on industry exposure and leadership roles at the intersection of engineering and innovation.
+          </p>
+        </div>
+
+        <div class="experience-timeline">
+
+          <!-- Experience Entry 1: L&T R&D Intern -->
+          <div class="experience-entry animate-on-scroll">
+            <div class="experience-meta">
+              <h3 class="experience-role">Research and Development Intern</h3>
+              <span class="experience-date"><i class="far fa-calendar-alt"></i>&nbsp; May 2026 &ndash; Present</span>
+            </div>
+            <p class="experience-company"><i class="fas fa-building"></i>&nbsp; Larsen &amp; Toubro</p>
+            <p class="experience-description">Worked on industry-aligned software development tasks focused on automating and standardizing CAD Modelling and Drawing Processes and calculations. Assisted in designing and implementing modern solutions to problems faced by design engineers and also contribute to new product development.</p>
+          </div>
+
+          <!-- Experience Entry 2: Titan Project Intern -->
+          <div class="experience-entry animate-on-scroll">
+            <div class="experience-meta">
+              <h3 class="experience-role">Project Intern</h3>
+              <span class="experience-date"><i class="far fa-calendar-alt"></i>&nbsp; Jun 2025 &ndash; Jul 2025</span>
+            </div>
+            <p class="experience-company"><i class="fas fa-building"></i>&nbsp; Titan Company Limited</p>
+            <p class="experience-description">Worked on industry-aligned software development tasks focused on automating and standardizing jewellery pricing calculations. Assisted in designing and implementing a web-based Jewellery Rate Calculator, incorporating real-world pricing parameters such as gold rate, wastage, making charges, and applicable taxes.</p>
+          </div>
+
+          <!-- Experience Entry 3: ASME Vice Chairperson -->
+          <div class="experience-entry animate-on-scroll">
+            <div class="experience-meta">
+              <h3 class="experience-role">Vice Chairperson</h3>
+              <span class="experience-date"><i class="far fa-calendar-alt"></i>&nbsp; Mar 2026 &ndash; Present</span>
+            </div>
+            <p class="experience-company"><i class="fas fa-users"></i>&nbsp; ASME SRIT Student Section</p>
+            <p class="experience-description">Support the Chairperson in overseeing chapter operations, coordinating technical events, workshops, and student engagement initiatives. Contribute to strategic planning and execution of programs aimed at strengthening technical exposure and professional development for members.</p>
+          </div>
+
+          <!-- Experience Entry 4: Eduversity Student Intern -->
+          <div class="experience-entry animate-on-scroll">
+            <div class="experience-meta">
+              <h3 class="experience-role">Student Intern</h3>
+              <span class="experience-date"><i class="far fa-calendar-alt"></i>&nbsp; Nov 2024 &ndash; Dec 2024</span>
+            </div>
+            <p class="experience-company"><i class="fas fa-building"></i>&nbsp; Eduversity</p>
+            <p class="experience-description">Completed a short-term internship focused on hybrid electric vehicle (HEV) systems, gaining exposure to powertrain architecture, energy flow between electrical and mechanical subsystems, and basic battery and motor integration concepts.</p>
+          </div>
+
+          <!-- Experience Entry 5: ASME Circuit Debugging Head -->
+          <div class="experience-entry animate-on-scroll">
+            <div class="experience-meta">
+              <h3 class="experience-role">Circuit Debugging Head</h3>
+              <span class="experience-date"><i class="far fa-calendar-alt"></i>&nbsp; Jun 2025 &ndash; Feb 2026</span>
+            </div>
+            <p class="experience-company"><i class="fas fa-users"></i>&nbsp; ASME SRIT Student Section</p>
+            <p class="experience-description">Coordinate and support circuit debugging activities within the student chapter, assisting members in identifying and resolving hardware and wiring issues during projects and workshops.</p>
+          </div>
+
+          <!-- Experience Entry 6: ELECTRICUS Joint Treasurer -->
+          <div class="experience-entry animate-on-scroll">
+            <div class="experience-meta">
+              <h3 class="experience-role">Joint Treasurer</h3>
+              <span class="experience-date"><i class="far fa-calendar-alt"></i>&nbsp; Aug 2025 &ndash; Present</span>
+            </div>
+            <p class="experience-company"><i class="fas fa-users"></i>&nbsp; ELECTRICUS</p>
+            <p class="experience-description">Assist in managing the association's financial activities, including budget planning, expense tracking, and documentation for technical events and workshops.</p>
+          </div>
+
+          <!-- Experience Entry 7: Team Garudans -->
+          <div class="experience-entry animate-on-scroll">
+            <div class="experience-meta">
+              <h3 class="experience-role">Electrical &amp; Business Team</h3>
+              <span class="experience-date"><i class="far fa-calendar-alt"></i>&nbsp; Feb 2024 &ndash; Present</span>
+            </div>
+            <p class="experience-company"><i class="fas fa-flag-checkered"></i>&nbsp; Team Garudans</p>
+            <p class="experience-description">As a member of the core electrical team, contribute to the design, integration, and testing of electrical systems for the institute's go-kart platform. Support troubleshooting and on-track issue resolution during testing and events, emphasizing safety and performance consistency.</p>
+          </div>
+
+          <!-- Experience Entry 8: Team Mechatrons -->
+          <div class="experience-entry animate-on-scroll">
+            <div class="experience-meta">
+              <h3 class="experience-role">Electrical Team</h3>
+              <span class="experience-date"><i class="far fa-calendar-alt"></i>&nbsp; Feb 2025 &ndash; Mar 2025</span>
+            </div>
+            <p class="experience-company"><i class="fas fa-flag-checkered"></i>&nbsp; Team Mechatrons</p>
+            <p class="experience-description">Contributed as a member of the electrical team for Team Mechatrons, the institute's e-bike development team. Assisted in electrical system integration, wiring, and basic validation of power and control components.</p>
+          </div>
+
+        </div><!-- /.experience-timeline -->
+      </div>
+    </section>
+
+
+    <!-- ==============================================================
+         SECTION 5: ACHIEVEMENTS & AWARDS
+         ==============================================================
+         Currently: L&T PIVOT Challenge only.
+         To add more: duplicate the .achievement-card block.
+    -->
+
+    <!-- ==================== SECTION 5: ACHIEVEMENTS & AWARDS ==================== -->
+    <section id="achievements" class="section" aria-label="Achievements and awards">
+      <div class="container">
+        <div class="text-center">
+          <h2>Achievements &amp; Awards</h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Recognition for innovation and engineering excellence.</p>
+        </div>
+        <div class="achievements-grid">
+
+          <div class="card achievement-card animate-on-scroll">
+            <img src="images/achievements/pivot.jpeg" alt="L&T PIVOT Best Innovators Award" class="achievement-image" />
+            <div class="achievement-content">
+              <p class="achievement-event">Industry Hackathon</p>
+              <h3>Best Innovators Award - L&amp;T PIVOT Challenge</h3>
+              <p>Designed and implemented <strong class="gold-text">DraftMind- AI</strong> An AI to find Manufacturability and Operability of Engineering Drawings.</p>
+              <div class="achievement-badge"><i class="fas fa-award"></i> Best Innovators Award</div>
+            </div>
+          </div>
+
+          <div class="card achievement-card animate-on-scroll">
+            <img src="images/achievements/viswakarma.jpeg" alt="Vishwakarma Awards 2025" class="achievement-image" />
+            <div class="achievement-content">
+              <p class="achievement-event">National Competition</p>
+              <h3>13th Position - Vishwakarma Awards 2025</h3>
+              <p>Secured 13th position in the sector of Energy and Mobility at the prestigious Vishwakarma Awards 2025, competing against top engineering teams nationwide.</p>
+              <div class="achievement-badge"><i class="fas fa-medal"></i> Energy &amp; Mobility Sector</div>
+            </div>
+          </div>
+
+          <div class="card achievement-card animate-on-scroll">
+            <img src="images/achievements/cac.jpeg" alt="Caterpillar Autonomy Challenge 2026" class="achievement-image" />
+            <div class="achievement-content">
+              <p class="achievement-event">Autonomy Challenge</p>
+              <h3>Pre-Finalist - Caterpillar Autonomy Challenge 2026</h3>
+              <p>Selected as a pre-finalist in the Caterpillar Autonomy Challenge 2026, showcasing autonomous systems engineering capabilities at an international level.</p>
+              <div class="achievement-badge"><i class="fas fa-trophy"></i> Pre-Finalist</div>
+            </div>
+          </div>
+
+          <div class="card achievement-card animate-on-scroll">
+            <img src="images/achievements/sakthi.jpeg" alt="Interofest 2k25 Best Paper Award" class="achievement-image" />
+            <div class="achievement-content">
+              <p class="achievement-event">Paper Presentation</p>
+              <h3>Best Paper Award &amp; 2nd Place - Interofest 2k25</h3>
+              <p>Won the Best Paper Award and secured second place in the paper presentation competition at Interofest 2k25 for research contributions.</p>
+              <div class="achievement-badge"><i class="fas fa-file-alt"></i> Best Paper Award</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== SECTION 6: CAPSTONE PROJECTS ==================== -->
+    <section id="capstone-projects" class="section section-alt" aria-label="Capstone projects">
+      <div class="container">
+        <div class="text-center">
+          <span class="projects-section-label"><i class="fas fa-rocket"></i> Flagship Work</span>
+          <h2>Capstone Projects</h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Production-grade systems solving real engineering challenges.</p>
+        </div>
+        <div class="projects-grid stagger-children">
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/capstone/aurum.jpeg" alt="Aurum - Gold Testing Kit" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">Computer Vision</span><span class="category-badge">SIFT Algorithm</span></div>
+            <h3>Aurum - Specialised Gold Testing Kit</h3>
+            <p class="project-desc">Specialized gold testing kit leveraging the SIFT algorithm for precise gold purity analysis through computer vision techniques.</p>
+            <div class="project-links">
+              <a href="https://github.com/Tharun-bs/portfolio-files/blob/main/A%20Novel%20Hybrid%20Approach%20for%20Non-Destructive%20Gold%20Purity%20Assessment%20Using%20Stereovision%20and%20Ultrasonic%20Analysis.pdf" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-file"></i>&nbsp; View File</a>
+              <a href="https://open.substack.com/pub/theopentabsclub/p/pixel-lyte-aurum?r=62yrwk&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-blog"></i>&nbsp; Blog</a>
+            </div>
+          </div>
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/capstone/cadsync.png" alt="CADSync AI" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">CAD Automation</span><span class="category-badge">AI</span></div>
+            <h3>CADSync - AI</h3>
+            <p class="project-desc">AI-powered CAD synchronization tool for automated design workflows, intelligent feature extraction, and seamless model management.</p>
+            <div class="project-links">
+              <a href="https://github.com/Tharun-bs/CADSync-AI" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fab fa-github"></i>&nbsp; GitHub</a>
+              <a href="https://open.substack.com/pub/theopentabsclub/p/final_v2_actual_final?r=62yrwk&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-blog"></i>&nbsp; Blog</a>
+            </div>
+          </div>
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/capstone/panel2wire.jpeg" alt="Panel2Wire" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">CAD Automation</span><span class="category-badge">Computer Vision</span></div>
+            <h3>Panel2Wire - SLD to 3LD Automation</h3>
+            <p class="project-desc">Production-ready FastAPI system converting Single Line Diagrams to Three Line Diagrams using YOLOv8 symbol detection and ezdxf DXF export.</p>
+            <div class="project-links">
+              <a href="https://github.com/Tharun-bs/panel2wire" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fab fa-github"></i>&nbsp; GitHub</a>
+              <a href="https://open.substack.com/pub/theopentabsclub/p/the-lazy-engineer?r=62yrwk&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-blog"></i>&nbsp; Blog</a>
+            </div>
+          </div>
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/capstone/draftmind.jpeg" alt="DraftMind AI" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">LLM Agents</span><span class="category-badge">CAD</span></div>
+            <h3>DraftMind - AI</h3>
+            <p class="project-desc">AI-driven drafting intelligence tool that automates design documentation using LLM-based agents.</p>
+            <div class="project-links">
+              <a href="https://github.com/Tharun-bs/draftmind-ai" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fab fa-github"></i>&nbsp; GitHub</a>
+              <a href="https://open.substack.com/pub/theopentabsclub/p/worth-it?r=62yrwk&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-blog"></i>&nbsp; Blog</a>
+            </div>
+          </div>
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/capstone/car safety.png" alt="Car Safety Control System" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">Raspberry Pi</span><span class="category-badge">IoT</span></div>
+            <h3>Car Safety Control &amp; Airbag Alert System</h3>
+            <p class="project-desc">Raspberry Pi-based car safety control system with airbag deployment notification alerts and real-time crash detection.</p>
+            <div class="project-links">
+              <a href="https://github.com/Tharun-bs/portfolio-files/blob/main/Car%20Safety%20Control%20and%20Airbag%20Notification%20Alert%20System%20using%20Raspberry%20Pi%204.docx" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-file"></i>&nbsp; View File</a>
+              <a href="https://open.substack.com/pub/theopentabsclub/p/the-ultimate-paradox?r=62yrwk&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-blog"></i>&nbsp; Blog</a>
+            </div>
+          </div>
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/capstone/fire robot.png" alt="Fire Detection Robot" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">Raspberry Pi</span><span class="category-badge">Robotics</span></div>
+            <h3>Fire Detection &amp; Extinguishing Robot</h3>
+            <p class="project-desc">Raspberry Pi-powered autonomous robot for real-time fire detection using sensor fusion and automated extinguishing.</p>
+            <div class="project-links">
+              <a href="https://github.com/Tharun-bs/portfolio-files/blob/main/Fire%20Detection%20System%20and%20Extinguishing%20Robot%20using%20Raspberry%20Pi%204.docx" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-file"></i>&nbsp; View File</a>
+              <a href="https://open.substack.com/pub/theopentabsclub/p/the-promethean?r=62yrwk&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-blog"></i>&nbsp; Blog</a>
+            </div>
+          </div>
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/capstone/rover.jpeg" alt="Excavation Rover" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">Robotics</span><span class="category-badge">Autonomous Systems</span></div>
+            <h3>Excavation Rover</h3>
+            <p class="project-desc">Autonomous excavation rover for terrain exploration with sensor-based navigation and remote teleoperation.</p>
+            <div class="project-links">
+              <a href="https://github.com/Tharun-bs/portfolio-files/blob/main/rover.jpeg" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-file"></i>&nbsp; View File</a>
+              <a href="https://open.substack.com/pub/theopentabsclub/p/red-dirt-green-grass?r=62yrwk&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-blog"></i>&nbsp; Blog</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== SECTION 7: FUN SIDE QUESTS ==================== -->
+    <section id="side-quests" class="section" aria-label="Fun side quest projects">
+      <div class="container">
+        <div class="text-center">
+          <span class="projects-section-label"><i class="fas fa-gamepad"></i> Passion Projects</span>
+          <h2>Fun Side Quests</h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Creative explorations, weekend hacks, and projects born from pure curiosity.</p>
+        </div>
+        <div class="projects-grid stagger-children">
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/side/npdsync.png" alt="NPD Sync" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">Full-Stack</span><span class="category-badge">Productivity</span></div>
+            <h3>NPD-Sync</h3>
+            <p class="project-desc">Synchronization tool for new product development workflows, streamlining team collaboration and project tracking.</p>
+            <div class="project-links">
+              <a href="https://github.com/Tharun-bs/npd-sync" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fab fa-github"></i>&nbsp; GitHub</a>
+              <a href="https://open.substack.com/pub/theopentabsclub/p/tool?r=62yrwk&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-blog"></i>&nbsp; Blog</a>
+            </div>
+          </div>
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/side/voice control.png" alt="Voice Controlled Water Dispenser" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">Raspberry Pi</span><span class="category-badge">IoT</span></div>
+            <h3>Voice Controlled Automatic Water Dispenser</h3>
+            <p class="project-desc">Raspberry Pi-based automatic water dispenser with voice command integration for hands-free operation.</p>
+            <div class="project-links"><a href="https://github.com/Tharun-bs/portfolio-files/blob/main/Voice%20Controlled%20Automatic%20Water%20Dispenser%20for%20using%20Raspberry%20Pi%204.pdf" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-file"></i>&nbsp; View File</a></div>
+          </div>
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/side/sign.png" alt="Sign Language Translator" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">Computer Vision</span><span class="category-badge">Accessibility</span></div>
+            <h3>Real-Time Sign Language Translator</h3>
+            <p class="project-desc">Real-time sign language recognition using YOLOv8, pose estimation, and deep learning with multi-hand tracking.</p>
+            <div class="project-links"><a href="https://github.com/Tharun-bs/Sign-Language-Translator" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fab fa-github"></i>&nbsp; GitHub</a></div>
+          </div>
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/side/Arduino using matlab.png" alt="Arduino MATLAB Simulink" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">MATLAB</span><span class="category-badge">Simulation</span></div>
+            <h3>Real-Time Data Analysis - Arduino in MATLAB/Simulink</h3>
+            <p class="project-desc">Real-time data acquisition and analysis pipeline connecting Arduino to MATLAB/Simulink for live sensor data visualization.</p>
+            <div class="project-links">
+              <a href="https://github.com/Tharun-bs/Real-Time-data-analysis" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fab fa-github"></i>&nbsp; GitHub</a>
+              <a href="https://open.substack.com/pub/theopentabsclub/p/the-real-neo?r=62yrwk&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-blog"></i>&nbsp; Blog</a>
+            </div>
+          </div>
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/side/telesense.png" alt="Tele-Sense Smart Home" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">IoT</span><span class="category-badge">Home Automation</span></div>
+            <h3>Tele-Sense: Smart Home Automation</h3>
+            <p class="project-desc">Smart home automation system with remote sensing capabilities and intelligent control through IoT protocols.</p>
+            <div class="project-links"><a href="https://github.com/Tharun-bs/portfolio-files/blob/main/Telesense.pdf" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-file"></i>&nbsp; View File</a></div>
+          </div>
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/side/bstgpt.png" alt="BST GPT" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">LLM</span><span class="category-badge">NLP</span></div>
+            <h3>BST GPT - Local Mistral-7B Chatbot</h3>
+            <p class="project-desc">Privacy-focused chatbot using Mistral-7B running fully local with context-aware multi-turn conversations.</p>
+            <div class="project-links">
+              <a href="https://github.com/Tharun-bs/BST-GPT-AI-Chatbot-Interface" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fab fa-github"></i>&nbsp; GitHub</a>
+              <a href="https://open.substack.com/pub/theopentabsclub/p/the-silicon-cage?r=62yrwk&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-blog"></i>&nbsp; Blog</a>
+            </div>
+          </div>
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/side/portfolio manager.png" alt="Student Portfolio Manager" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">Full-Stack</span><span class="category-badge">Database</span></div>
+            <h3>Student Portfolio Manager - MySQL &amp; PHP</h3>
+            <p class="project-desc">Full-stack student portfolio management system built with MySQL and PHP for organizing academic projects.</p>
+            <div class="project-links"><a href="https://github.com/Tharun-bs/Student-Portfolio-Generator-and-Manager" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fab fa-github"></i>&nbsp; GitHub</a></div>
+          </div>
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/side/enernexus.png" alt="EnerNexus" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">IoT</span><span class="category-badge">Energy</span></div>
+            <h3>EnerNexus - Smart Energy Auditor</h3>
+            <p class="project-desc">End-to-end IoT system for real-time energy consumption monitoring with interactive dashboards and alerts.</p>
+            <div class="project-links">
+              <a href="https://github.com/Tharun-bs/enernexus" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fab fa-github"></i>&nbsp; GitHub</a>
+              <a href="https://open.substack.com/pub/theopentabsclub/p/watts-wrong?r=62yrwk&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-blog"></i>&nbsp; Blog</a>
+            </div>
+          </div>
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/side/exoplanet.jpeg" alt="Exoplanet AI" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">AI/ML</span><span class="category-badge">Space</span></div>
+            <h3>Exoplanet-AI</h3>
+            <p class="project-desc">AI-powered exoplanet detection and classification system using machine learning models trained on astronomical transit data.</p>
+            <div class="project-links">
+              <a href="https://github.com/alansahai/nasa-space-apps" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fab fa-github"></i>&nbsp; GitHub</a>
+              <a href="https://open.substack.com/pub/theopentabsclub/p/exoplanets-and-aliens?r=62yrwk&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-blog"></i>&nbsp; Blog</a>
+            </div>
+          </div>
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/side/php gold calculator.png" alt="PHP Gold Calculator" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">PHP</span><span class="category-badge">API</span></div>
+            <h3>PHP Gold Calculator - Live Rate API</h3>
+            <p class="project-desc">Gold rate calculator integrated with live gold rate API for real-time jewellery pricing with tax calculations.</p>
+            <div class="project-links"><a href="https://github.com/Tharun-bs/Gold-Price-Calculator" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fab fa-github"></i>&nbsp; GitHub</a></div>
+          </div>
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/side/pdfmyguy.png" alt="PDFmyGUY" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">NLP</span><span class="category-badge">Document AI</span></div>
+            <h3>PDFmyGUY - Smart PDF Analyzer</h3>
+            <p class="project-desc">Intelligent PDF analysis tool with natural language querying, document summarization, and automated data extraction.</p>
+            <div class="project-links"><a href="https://github.com/Tharun-bs/PDFmyGUY" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fab fa-github"></i>&nbsp; GitHub</a></div>
+          </div>
+
+          <div class="card project-card animate-on-scroll">
+            <img src="images/side/air quality.png" alt="Air Quality Monitor" class="project-thumbnail" />
+            <div class="project-category"><span class="category-badge">Arduino</span><span class="category-badge">IoT</span></div>
+            <h3>Air Quality Monitoring System - Arduino Uno</h3>
+            <p class="project-desc">Real-time air quality monitoring system using Arduino Uno with MQ gas sensors and AQI level alerts.</p>
+            <div class="project-links">
+              <a href="https://github.com/Tharun-bs/portfolio-files/blob/main/Air%20Quality%20Monitoring%20System%20using%20Arduino%20Uno%20(2).pdf" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-file"></i>&nbsp; View File</a>
+              <a href="https://open.substack.com/pub/theopentabsclub/p/the-air-in-here-is-terrible?r=62yrwk&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-blog"></i>&nbsp; Blog</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== SECTION: CERTIFICATIONS ==================== -->
+    <section id="certifications" class="section section-alt" aria-label="Certifications">
+      <div class="container text-center">
+        <h2>Certifications</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Continuous learning across various engineering disciplines.</p>
+      </div>
+      <div class="certifications-marquee">
+        <div class="marquee-track scroll-left" id="cert-row-1"></div>
+        <div class="marquee-track scroll-right" id="cert-row-2"></div>
+      </div>
+      <div class="container text-center">
+        <p class="cert-count"><i class="fas fa-award" style="color:var(--primary-gold);"></i>&nbsp; <strong id="cert-total">0</strong> Certifications &amp; counting</p>
+      </div>
+    </section>
+
+
+    <!-- ==================== SECTION: PATENTS & PUBLICATIONS ==================== -->
+    <section id="patents" class="section" aria-label="Patents and publications">
+      <div class="container">
+        <div class="text-center">
+          <h2>Patents &amp; Publications</h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Intellectual property and research contributions to the engineering community.</p>
+        </div>
+        <div class="publications-list">
+
+          <div class="card publication-entry animate-on-scroll">
+            <div class="publication-icon"><i class="fas fa-scroll"></i></div>
+            <div class="publication-content">
+              <div class="publication-tags" style="margin-bottom:8px;"><span class="pub-type-badge patent">Patent</span><span class="pub-type-badge patent" style="margin-left:6px;">Published</span></div>
+              <h3>Extended Reality Teleoperation System with 360-Degree Video Streaming and Real-Time Digital Twin Monitoring for Remote Environment Exploration</h3>
+              <p class="publication-meta">202641034420 &middot; Filed Mar 21, 2026</p>
+              <p>A comprehensive XR teleoperation system enabling remote environment exploration through immersive 360&deg; video streaming coupled with real-time digital twin monitoring.</p>
+            </div>
+          </div>
+
+          <div class="card publication-entry animate-on-scroll">
+            <div class="publication-icon"><i class="fas fa-file-alt"></i></div>
+            <div class="publication-content">
+              <div class="publication-tags" style="margin-bottom:8px;"><span class="pub-type-badge paper">Publication</span></div>
+              <h3>Electrochemistry and Modern Batteries</h3>
+              <p class="publication-meta">Authors: Dr. S Senthilkumar, Tharun B S</p>
+              <p>Presented a structured overview of electrochemical principles underlying modern battery technologies, including charge transport, electrode reactions, and energy storage mechanisms.</p>
+            </div>
+          </div>
+
+          <div class="card publication-entry animate-on-scroll">
+            <div class="publication-icon"><i class="fas fa-file-alt"></i></div>
+            <div class="publication-content">
+              <div class="publication-tags" style="margin-bottom:8px;"><span class="pub-type-badge paper">Publication</span></div>
+              <h3>From Redox Reactions to Rechargeability: Electrochemistry in Modern Batteries</h3>
+              <p class="publication-meta">Authors: Dr. S Senthilkumar, Tharun B S</p>
+              <p>Explored the role of redox reactions in enabling rechargeable battery systems, detailing electrochemical processes governing charge storage and release.</p>
+            </div>
+          </div>
+
+          <div class="card publication-entry animate-on-scroll">
+            <div class="publication-icon"><i class="fas fa-file-alt"></i></div>
+            <div class="publication-content">
+              <div class="publication-tags" style="margin-bottom:8px;"><span class="pub-type-badge paper">Publication</span></div>
+              <h3>Battery Management Systems &mdash; A Brief Study</h3>
+              <p class="publication-meta">Authors: Dr. C Anandhakumar, Tharun B S</p>
+              <p>Presented a comprehensive overview of battery management systems, focusing on state estimation, cell balancing, thermal monitoring, and protection mechanisms.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== SECTION: BEYOND THE CODE ==================== -->
+    <section id="beyond-the-code" class="section section-alt" aria-label="Beyond the Code">
+      <div class="container text-center">
+        <span class="projects-section-label"><i class="fas fa-lightbulb"></i> Outside the Box</span>
+        <h2>Beyond the Code</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Sharing ideas, stories, and insights through writing and spoken word.</p>
+        <div class="beyond-grid">
+          <div class="card beyond-card animate-on-scroll">
+            <img src="images/book.jpg" alt="Book by Tharun" class="beyond-card-image" />
+            <div class="beyond-card-body">
+              <h3>Published Author</h3>
+              <p>Wrote and published a book combining technical insights and personal perspectives on self improvement, and the journey of a student builder.</p>
+              <a href="https://amzn.in/d/94R3Q69" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-shopping-cart"></i>&nbsp; Buy the Book</a>
+            </div>
+          </div>
+          <div class="card beyond-card animate-on-scroll">
+            <img src="images/podcast.png" alt="Podcasting" class="beyond-card-image" />
+            <div class="beyond-card-body">
+              <h3>Podcasting</h3>
+              <p>Conversations about AI, engineering culture, student life, and the future of tech &mdash; recorded and shared for curious minds.</p>
+              <a href="https://open.spotify.com/show/565hPGSegoqv6WfuXWfMfw" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-headphones"></i>&nbsp; Listen Now</a>
+            </div>
+          </div>
+          <div class="card beyond-card animate-on-scroll">
+            <img src="images/blog.png" alt="Open Tabs Club Blog" class="beyond-card-image" />
+            <div class="beyond-card-body">
+              <h3>Open Tabs Club</h3>
+              <p>A blog exploring tech deep dives, engineering breakdowns, and the curiosity-driven rabbit holes every builder falls into.</p>
+              <a href="https://theopentabsclub.substack.com/" class="btn-secondary btn-small" target="_blank" rel="noopener"><i class="fas fa-book-open"></i>&nbsp; Read Articles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== SECTION: CONTACT ==================== -->
+    <section id="contact" class="section" aria-label="Contact me">
+      <div class="container">
+        <div class="text-center">
+          <h2>Get In Touch</h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Have a project in mind, a collaboration idea, or just want to say hello? Let's connect.</p>
+        </div>
+        <div class="contact-layout">
+          <div class="contact-form animate-on-scroll">
+            <h3>Send a Message</h3>
+            <form id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="contact-name">Your Name *</label>
+                <input type="text" id="contact-name" name="name" placeholder="Tharun" required />
+                <p class="form-error" id="name-error">Please enter your name.</p>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email Address *</label>
+                <input type="email" id="contact-email" name="email" placeholder="example@gmail.com" required />
+                <p class="form-error" id="email-error">Please enter a valid email address.</p>
+              </div>
+              <div class="form-group">
+                <label for="contact-subject">Subject *</label>
+                <input type="text" id="contact-subject" name="subject" placeholder="Project collaboration" required />
+                <p class="form-error" id="subject-error">Please enter a subject.</p>
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Message *</label>
+                <textarea id="contact-message" name="message" placeholder="Tell me about your idea..." required minlength="20"></textarea>
+                <p class="form-error" id="message-error">Please enter a message (min. 20 characters).</p>
+              </div>
+              <button type="submit" class="btn-primary" style="width:100%;"><i class="fas fa-paper-plane"></i>&nbsp; Send Message</button>
+            </form>
+            <div id="form-success" role="alert"><i class="fas fa-check-circle"></i>&nbsp; Thank you! Your message has been received.</div>
+          </div>
+          <div class="contact-info animate-on-scroll">
+            <h3>Connect With Me</h3>
+            <div class="contact-info-list">
+              <div class="contact-info-item">
+              <div class="icon-circle"><i class="fas fa-phone"></i></div>
+              <div class="info-text"><span class="info-label">Phone</span><span class="info-value"><a href="tel:+91 8778948881">+91 8778948881</a></span></div>
+            </div>
+
+              <div class="contact-info-item">
+                <div class="icon-circle"><i class="fas fa-envelope"></i></div>
+                <div class="info-text"><span class="info-label">Email</span><span class="info-value"><a href="mailto:tharunbs5002@gmail.com">tharunbs5002@gmail.com</a></span></div>
+              </div>
+              <div class="contact-info-item">
+                <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="info-text"><span class="info-label">Location</span><span class="info-value">Coimbatore, Tamil Nadu, India</span></div>
+              </div>
+            </div>
+            <div class="contact-socials">
+              <a href="https://www.linkedin.com/in/tharun-b-s/" class="social-icon" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/Tharun-bs" class="social-icon" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://x.com/onlyy_Tharun" class="social-icon" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="fab fa-x-twitter"></i></a>
+              <a href="https://www.instagram.com/tharun_b.s?igsh=MXFwZWUxZnk2Ynoxdg==" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="resume-cta animate-on-scroll">
+          <p>Want the full picture? Grab my resume.</p>
+          <a href="https://drive.google.com/file/d/1elsW5EVSKiPksMor_dFpUBg65i5lPXVT/view?usp=sharing" class="btn-resume" target="_blank" rel="noopener" download><i class="fas fa-file-download"></i> Download Resume</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="footer-tagline">"Engineering the future with AI, Robotics &amp; Innovation"</p>
+      <p class="footer-copyright">&copy; 2026 Tharun. All rights reserved.</p>
+      <p class="footer-credit">Built with <span style="color:#e25555;">&#10084;</span> and dedication</p>
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      initScrollAnimations();
+      initNavigation();
+      initMobileMenu();
+      initFormValidation();
+      initScrollToTop();
+      initActiveNavOnScroll();
+      initCertificationsMarquee();
+    });
+
+    function initScrollAnimations() {
+      var els = document.querySelectorAll('.animate-on-scroll');
+      if (!els.length) return;
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      els.forEach(function(el) { obs.observe(el); });
+    }
+
+    function initNavigation() {
+      var header = document.getElementById('site-header');
+      window.addEventListener('scroll', function() { header.classList.toggle('scrolled', window.scrollY > 60); });
+    }
+
+    function initMobileMenu() {
+      var hamburger = document.getElementById('hamburger');
+      var mobileNav = document.getElementById('mobile-nav');
+      var overlay = document.getElementById('nav-overlay');
+      function openMenu() { hamburger.classList.add('active'); hamburger.setAttribute('aria-expanded','true'); mobileNav.classList.add('open'); overlay.style.display='block'; requestAnimationFrame(function(){overlay.classList.add('active');}); document.body.style.overflow='hidden'; }
+      function closeMenu() { hamburger.classList.remove('active'); hamburger.setAttribute('aria-expanded','false'); mobileNav.classList.remove('open'); overlay.classList.remove('active'); setTimeout(function(){overlay.style.display='none';},300); document.body.style.overflow=''; }
+      hamburger.addEventListener('click', function() { mobileNav.classList.contains('open') ? closeMenu() : openMenu(); });
+      overlay.addEventListener('click', closeMenu);
+      mobileNav.querySelectorAll('.nav-link').forEach(function(l){l.addEventListener('click',closeMenu);});
+    }
+
+    function initFormValidation() {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+      form.addEventListener('submit', function(e) {
+        e.preventDefault(); var valid = true;
+        var n=document.getElementById('contact-name'),em=document.getElementById('contact-email'),s=document.getElementById('contact-subject'),m=document.getElementById('contact-message');
+        if(!n.value.trim()){setErr(n,'name-error');valid=false;}else{clrErr(n,'name-error');}
+        if(!em.value.trim()||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value)){setErr(em,'email-error');valid=false;}else{clrErr(em,'email-error');}
+        if(!s.value.trim()){setErr(s,'subject-error');valid=false;}else{clrErr(s,'subject-error');}
+        if(!m.value.trim()||m.value.trim().length<20){setErr(m,'message-error');valid=false;}else{clrErr(m,'message-error');}
+        if(valid){form.style.display='none';document.getElementById('form-success').style.display='block';}
+      });
+      function setErr(i,id){i.parentElement.classList.add('error');document.getElementById(id).style.display='block';}
+      function clrErr(i,id){i.parentElement.classList.remove('error');document.getElementById(id).style.display='none';}
+    }
+
+    function initScrollToTop() {
+      var btn = document.getElementById('scroll-to-top');
+      window.addEventListener('scroll', function() { btn.classList.toggle('visible', window.scrollY > 500); });
+      btn.addEventListener('click', function() { window.scrollTo({top:0,behavior:'smooth'}); });
+    }
+
+    function initActiveNavOnScroll() {
+      var sections = document.querySelectorAll('section[id]');
+      var navLinks = document.querySelectorAll('.nav-menu .nav-link, .mobile-nav .nav-link');
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var id = entry.target.getAttribute('id');
+            navLinks.forEach(function(link) {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === '#' + id) link.classList.add('active');
+              if (id === 'side-quests' && link.getAttribute('href') === '#capstone-projects') link.classList.add('active');
+            });
+          }
+        });
+      }, { threshold: 0.2, rootMargin: '-72px 0px -50% 0px' });
+      sections.forEach(function(s) { obs.observe(s); });
+    }
+
+    function toggleDomain(button) {
+      var item = button.parentElement;
+      if (item.classList.contains('open')) { item.classList.remove('open'); button.setAttribute('aria-expanded','false'); }
+      else { item.classList.add('open'); button.setAttribute('aria-expanded','true'); }
+    }
+
+    /* === CERTIFICATIONS MARQUEE === */
+    function initCertificationsMarquee() {
+      var certImages = [
+        'CS50x.png','Prompt engg.jpg','aut.jpg','autodesk.jpg','aws.jpg','bee.jpg','bot.jpg','cisco1.jpg',
+        'cruc qu.jpg','cs onr.jpg','dl onr.jpg','edu ind.jpg','edu-int.jpg','electricus.jpg','encode-decode.jpg','ev.jpg',
+        'fa.jpg','fa1.jpg','fossee.jpg','fusion.jpg','gd.jpg','ge aero.jpg','go4youth.jpg','gpt.png',
+        'hev.jpg','igi.jpg','in mc.jpg','iot.jpg','iri.jpg','isro.jpg','kanam.jpg','kart.jpg',
+        'kru.jpg','kruu.jpg','m onr.jpg','matirce.jpg','matl.jpg','matlab.jpg','mc onr.jpg','ml onr.jpg',
+        'ml.jpg','mob.jpg','mybharath.png','nasa.jpg','ncmst.jpg','novate.jpg','nptel.jpg','nspc.jpg',
+        'palai.jpg','pap.jpg','paper.jpg','pe onr.jpg','pivot.jpg','pivot1.jpg','pp.jpg','py1.jpg',
+        'py1b.jpg','py2.jpg','py2b.jpg','s onr.jpg','sak.jpg','sakthi.jpg','sdg.jpg','siemens.jpg',
+        'siep.jpg','spoken tutorial.jpg','ss onr.jpg','stud.jpg','studai.jpg','sudoku.jpg','swaraj.jpg','tata.jpg',
+        'telescope.jpg','tnkc.jpg','tvs.jpg','vit.jpg','yukthi.png'
+      ];
+      document.getElementById('cert-total').textContent = certImages.length;
+      var half = Math.ceil(certImages.length / 2);
+      var row1 = certImages.slice(0, half);
+      var row2 = certImages.slice(half);
+      function buildRow(images) {
+        var html = '';
+        for (var i = 0; i < 2; i++) {
+          images.forEach(function(src) {
+            html += '<span class="cert-item"><img src="images/certificates/' + src + '" alt="Certificate" style="height:40px;width:auto;border-radius:4px;object-fit:contain;" /></span>';
+          });
+        }
+        return html;
+      }
+      document.getElementById('cert-row-1').innerHTML = buildRow(row1);
+      document.getElementById('cert-row-2').innerHTML = buildRow(row2);
+    }
+  </script>
+</body>
+</html>
